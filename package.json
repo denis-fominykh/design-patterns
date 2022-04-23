@@ -1,0 +1,53 @@
+{
+  "name": "design-patterns",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0 --fix",
+	  "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,mdx,json}' --config ./.prettierrc.js",
+	  "format:check": "npm run format --check",
+	  "format:write": "npm run format --write"
+  },
+  "dependencies": {
+    "axios": "0.26.1",
+    "next": "12.1.5",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "styled-components": "5.3.5"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "12.1.5",
+    "@svgr/webpack": "6.2.1",
+    "@types/node": "17.0.25",
+    "@types/react": "18.0.6",
+    "@types/react-dom": "18.0.2",
+    "@types/styled-components": "5.1.25",
+    "@typescript-eslint/eslint-plugin": "5.20.0",
+    "babel-plugin-macros": "3.1.0",
+    "babel-plugin-styled-components": "2.0.7",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "2.7.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.6.2",
+    "typescript": "4.5.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint:fix",
+      "bash -c tsc",
+      "npm run test:nowatch"
+    ],
+    "*.{js,jsx}": [
+      "npm run lint:fix"
+    ],
+    "*.{css,json,md,mdx}": [
+      "prettier --write"
+    ]
+  }
+}
